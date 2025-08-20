@@ -28,7 +28,7 @@ function processTrade(trade) {
 
     if (side === "buy"){
         const newAvgPrice = calculateAveragePrice(position.totalQty, position.avgPrice, quantity, price);
-        position.avgPrice = newAvgPrice;
+        position.avgPrice = Number(newAvgPrice.toFixed(2));
         position.totalQty += quantity;
     } else {
         if (position.totalQty < quantity){
