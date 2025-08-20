@@ -43,6 +43,7 @@ Response: (201 Created)
         "price": 1000000,
         "quantity": 1,
         "createdAt": "2024-03-20T10:30:00.000Z"
+    }
 }
 ```
 
@@ -119,6 +120,22 @@ Since this is a simplified version, I assumed:
 1. **Three coins only** - Hardcoded BTC/ETH/SOL validation
 2. **Hardcoded prices** - `{BTC: 9000000, ETH: 60000, SOL: 30000}`
 
+
+## Testing
+
+Pretty thorough test coverage:
+- Portfolio math (average prices, buys/sells)
+- PnL tracking (both realized and unrealized)
+- Edge cases like selling more than you own
+
+Run them with:
+```bash
+# run once
+npm test
+
+# auto-rerun on changes
+npm run test:watch
+```
 
 ## API Response Format
 All endpoints return JSON with:
